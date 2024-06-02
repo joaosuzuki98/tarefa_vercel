@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- <div class="tabela-container">
+        <form class="formulario">
+            <label for="numero" class="labelzinha">
+                Escolha o número inicial
+            </label>
+            <input type="text" name="numero" class="inputi">
+            <button type="submit" class="butão">Aceitar</button>
+        </form> -->
+
+        <div id="container-muda-valor">
+            <div>
+                <label for="valor">Número inicial</label>
+                <input type="text" name="valor" id="valor">
+            </div>
+            <button class="button-10">Aceitar</button>
+        </div>
+
+        <table>
+            <tr>
+                {% if initial_number%}
+                    {% for i in range(initial_number, initial_number + 2) %}
+                        <td>{{ i }}</td>
+                    {% endfor %}
+                {% endif %}
+                {% if novo_valor%}
+                    {% for i in range(novo_valor, novo_valor + 2) %}
+                        <td>{{ i }}</td>
+                    {% endfor %}
+                {% endif %}
+            </tr>
+            <tr>
+                {% if initial_number%}
+                    {% for i in range(initial_number + 2, initial_number + 4) %}
+                        <td>{{ i }}</td>
+                    {% endfor %}
+                {% endif %}
+                {% if novo_valor %}
+                    {% for i in range(novo_valor + 2, novo_valor + 4) %}
+                        <td>{{ i }}</td>
+                    {% endfor %}
+                {% endif %}
+            </tr>
+        </table>
+    <!-- </div> -->
+{% endblock %}
